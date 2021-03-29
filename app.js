@@ -4,7 +4,7 @@ window.onload = () => {
 
   let items = document.getElementById('items');
   let submit = document.getElementById('submit');
-  
+
 
   let editItem = null;
 
@@ -13,6 +13,8 @@ window.onload = () => {
 };
 
 
+
+// Ajouter une tâche
 
 
 function addItem(e) {
@@ -25,7 +27,7 @@ function addItem(e) {
 
   if (inputVal === '') {
     alert("Saisie une tâche !");
-  } else {  
+  } else {
     document.getElementById("items").appendChild(li);
   }
   document.getElementById("item").value = "";
@@ -45,12 +47,14 @@ function addItem(e) {
 
 }
 
+// Bouton supprimer
+
 function removeItem(e) {
   e.preventDefault();
 
   var close = document.getElementsByClassName("close");
 
-  for(i = 0; i < close.length; i++) {
+  for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
       var div = this.parentElement;
       div.style.display = "none";
@@ -59,22 +63,22 @@ function removeItem(e) {
   }
 }
 
+// bouton Edit
 
-function toggleButton(ref, btnID) {
-  /**
-   *
-   * a vous de jouer
-   */
+
+function editItemTest() {
+
+  alert("cool");
+  var test = document.getElementsByTagName("li");
+  for (i = 0; i < test.length; i++) {
+    test[i].onclick = function () {
+      var ediTask = this.innerText;
+      document.getElementById("item").value = ediTask;
+    }
+  }
 }
 
-// function edit(e) {
-//   e.preventDefault();
+function toggleButton (ref, btnID){
 
-//   var editText = document.getElementsByClassName('edit');
+}
 
-//   for (i = 0; i < editText.length; i++) {
-//     editText[i].onclick = function () {
-//       alert("test");
-//     }
-//   }
-// }
